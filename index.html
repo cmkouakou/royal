@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Portfolio Sid Zerbo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+html{color-scheme:light}
+body{margin:0}
+img{max-width:100%}
+/* Concept: parcours vertical daté, une couleur par rubrique, filtres collants, lisible au téléphone */
+:root{
+  --bg:#f5f7fb; --card:#ffffff; --fg:#14213d; --muted:#5a6785; --line:#dbe2ef;
+  --hero1:#14213d; --hero2:#1d3b8b; --herofg:#ffffff;
+  --c-form:#0e8f8f; --c-ing:#1d5fd1; --c-dir:#7a3fb8; --c-roy:#c9201a; --c-afr:#1b8a4b; --c-dist:#d98b00; --c-eng:#d6336c;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif; --body:'Public Sans','Segoe UI',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1424;--card:#16203a;--fg:#e9eefb;--muted:#9fb0d3;--line:#27345a;--hero1:#0a1020;--hero2:#18357f;
+ --c-form:#35c2c2;--c-ing:#6b9cff;--c-dir:#b88af0;--c-roy:#ff6a5f;--c-afr:#4fd28a;--c-dist:#ffc04d;--c-eng:#ff7fae;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1424;--card:#16203a;--fg:#e9eefb;--muted:#9fb0d3;--line:#27345a;--hero1:#0a1020;--hero2:#18357f;
+ --c-form:#35c2c2;--c-ing:#6b9cff;--c-dir:#b88af0;--c-roy:#ff6a5f;--c-afr:#4fd28a;--c-dist:#ffc04d;--c-eng:#ff7fae;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;padding-inline:0}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+.wrap{max-width:980px;margin-inline:auto;padding-inline:16px}
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:var(--herofg);padding-block:40px 36px;position:relative;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;opacity:.16;pointer-events:none}
+.hero::before{width:320px;height:320px;background:var(--c-dist);right:-90px;top:-110px}
+.hero::after{width:240px;height:240px;background:var(--c-afr);right:120px;bottom:-150px}
+.hero .wrap{position:relative;z-index:1}
+.avatar{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#ffc04d,#ff6a5f);display:grid;place-items:center;font:800 32px var(--display);color:#14213d;margin-bottom:16px;border:3px solid rgba(255,255,255,.6)}
+.hero h1{font-size:clamp(34px,7vw,56px);font-weight:800;letter-spacing:-.02em;line-height:1.05}
+.hero .sub{font-size:clamp(16px,2.6vw,20px);margin:10px 0 0;opacity:.92;max-width:44ch}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.badge{font-size:13px;font-weight:600;padding:5px 12px;border-radius:99px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:26px}
+.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:12px 14px}
+.stat b{display:block;font:800 28px var(--display);line-height:1.1}
+.stat span{font-size:13px;opacity:.9}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding-block:10px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
+.chip{flex:none;border:2px solid var(--line);background:var(--card);color:var(--fg);font:600 14px var(--body);padding:6px 14px;border-radius:99px;cursor:pointer;display:flex;align-items:center;gap:7px}
+.chip i{width:10px;height:10px;border-radius:50%;background:var(--c,var(--muted));display:inline-block}
+.chip[aria-pressed="true"]{background:var(--c,var(--fg));border-color:var(--c,var(--fg));color:#fff}
+.chip[aria-pressed="true"] i{background:#fff}
+.chip:focus-visible,.card summary:focus-visible,.order:focus-visible{outline:3px solid var(--c-dist);outline-offset:2px}
+.tools{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px;font-size:13px;color:var(--muted)}
+.order{border:0;background:none;color:var(--c-ing);font:600 13px var(--body);cursor:pointer;text-decoration:underline}
+main{padding-block:28px 40px}
+.era{font:800 clamp(22px,4vw,30px) var(--display);margin:34px 0 14px;display:flex;align-items:center;gap:12px;color:var(--fg)}
+.era::after{content:"";flex:1;height:2px;background:var(--line)}
+.tl{position:relative;margin:0;padding:0 0 0 34px;list-style:none}
+.tl::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:3px;background:var(--line);border-radius:3px}
+.item{position:relative;margin-bottom:16px}
+.item::before{content:"";position:absolute;left:-30px;top:20px;width:15px;height:15px;border-radius:50%;background:var(--c);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--c)}
+.card{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:14px;padding:0}
+.card summary{list-style:none;cursor:pointer;padding:14px 16px;display:block}
+.card summary::-webkit-details-marker{display:none}
+.meta{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:13px;color:var(--muted)}
+.yr{font:700 14px var(--display);color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);padding:2px 10px;border-radius:99px}
+.tag{font-weight:600;color:var(--c)}
+.card h3{font-size:19px;font-weight:700;margin-top:6px;line-height:1.25}
+.card .org{color:var(--muted);font-size:14.5px;margin-top:2px}
+.card .lead{margin:8px 0 0;font-size:15px}
+.more{padding:0 16px 16px;font-size:15px}
+.more ul{margin:6px 0 0;padding-left:20px}.more li{margin:3px 0}
+.hint{font-size:12.5px;color:var(--c);font-weight:600;margin-top:8px;display:block}
+.card[open] .hint{display:none}
+.photo{margin-top:12px;border:2px dashed var(--line);border-radius:10px;padding:14px;color:var(--muted);font-size:13px;text-align:center}
+.undated{margin-top:8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.undated .item::before{display:none}.undated .item{margin:0}
+.todo{background:var(--card);border:2px dashed var(--c-dist);border-radius:14px;padding:18px;margin-top:30px}
+.todo h2{font-size:22px;margin-bottom:8px}
+.todo ul{margin:8px 0 0;padding-left:20px}.todo li{margin:4px 0}
+footer{padding-block:24px 40px;color:var(--muted);font-size:13px;text-align:center}
+[hidden]{display:none!important}
+@media(prefers-reduced-motion:no-preference){.card{transition:box-shadow .15s}.card:hover{box-shadow:0 6px 18px rgba(20,33,61,.14)}}
+</style>
+
+
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="avatar" aria-hidden="true">SZ</div>
+  <h1>Sid Zerbo</h1>
+  <p class="sub">Ingénieur en électricité, automatisme et informatique appliquée. Dirigeant de projets et d'organisations, du Québec à l'Afrique.</p>
+  <div class="badges">
+    <span class="badge">Ing., FIC / P.Eng, FEC</span>
+    <span class="badge">Top 100 Professionnels Canada 2020</span>
+    <span class="badge">Top 100 Innovation et entrepreneuriat 2025</span>
+    <span class="badge">Chevalier du Mérite, Burkina Faso</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>1989</b><span>début de carrière d'ingénieur</span></div>
+    <div class="stat"><b>200</b><span>employés dirigés à la CSEM</span></div>
+    <div class="stat"><b>27 000 km</b><span>de conduits souterrains gérés</span></div>
+    <div class="stat"><b>21</b><span>villages électrifiés au Burkina Faso</span></div>
+  </div>
+</div></header>
+
+<div class="bar"><div class="wrap">
+  <div class="chips" id="chips" role="group" aria-label="Filtrer par rubrique"></div>
+  <div class="tools"><span id="count"></span><button class="order" id="order" type="button">Ordre : récent d'abord</button></div>
+</div></div>
+
+<main><div class="wrap">
+  <div id="tl"></div>
+  <h2 class="era" id="undatedTitle">Réalisations à dater</h2>
+  <div class="undated" id="undated"></div>
+  <section class="todo">
+    <h2>À compléter avec Sid</h2>
+    <p>Cette première version repose sur son CV du 23 mars 2026. Chaque carte pourra recevoir ses photos, ses chiffres et son récit.</p>
+    <ul>
+      <li>Projets en cours et projets en Afrique non encore communiqués</li>
+      <li>Dates exactes de Charbone Hydrogène (le CV donne 2018, 2019 et 2020 selon la section)</li>
+      <li>Dates de l'électrification des 21 villages et des cours donnés au Collège Édouard-Montpetit et à l'Institut Technique Aviron</li>
+      <li>Photos, documents et liens publics pour chaque réalisation</li>
+    </ul>
+  </section>
+</div></main>
+<footer><div class="wrap">Portfolio en construction · Sources : CV de Sid Zerbo (23 mars 2026) et documents Royal System</div></footer>
+
+<script>
+var CATS={form:['Formation','--c-form'],ing:['Ingénierie et énergie','--c-ing'],dir:['Direction et gouvernance','--c-dir'],roy:['Royal System','--c-roy'],afr:['Afrique','--c-afr'],eng:['Engagement et enseignement','--c-eng'],dist:['Distinctions','--c-dist']};
+var E=[
+{s:2025,e:null,d:'2025',c:'dist',t:'Top 100 Innovation et entrepreneuriat',o:'Canada',x:'Reconnaissance nationale de son parcours d\'innovation et d\'entrepreneuriat.'},
+{s:2025,e:null,d:'22 sept. 2025',c:'afr',t:'Accord FLA–BEC',o:'Force Leadership Africain · Black Engineers of Canada',x:'Collaboration de long terme visant des projets structurants en Afrique : numérique, énergie, infrastructures et industrialisation.',b:['Responsable technique du côté BEC']},
+{s:2024,e:null,d:'2024',c:'roy',t:'Salons professionnels',o:'Royal System',x:'Présence à des salons de l\'industrie.',b:['SIAL Canada 2024, Palais des congrès de Montréal','Sécurité Canada, Sheraton Laval','Bluestar Canada 2024, Dorval']},
+{s:2020,e:2026,d:'2020 – 2026',c:'roy',t:'Président et propriétaire',o:'Royal System',x:'Redressement d\'une PME informatique de plus de 60 ans et repositionnement vers l\'international.',b:['Solutions informatiques de points de vente pour le commerce de détail','Énergie : génératrices d\'urgence, solaire, onduleurs, UPS et batteries','Exportation du savoir-faire québécois et canadien vers l\'Afrique francophone','Consultant senior auprès de PME; membre de la Chambre de commerce du Burkina']},
+{s:2022,e:2024,d:'juil. 2022 – janv. 2024',c:'dir',t:'Président et directeur général',o:'Commission des services électriques de Montréal (CSEM)',x:'Direction de la plus grande infrastructure souterraine du Canada.',b:['7 divisions et près de 200 employés','Travaux de gestion et de construction de conduits souterrains civils, électriques et de télécommunication','27 000 km de conduits et 23 000 structures','Président du conseil d\'administration']},
+{s:2020,e:2022,d:'2020 – 2022',c:'dir',t:'Chef de l\'ingénierie, membre du comité exécutif',o:'Charbone Hydrogène',x:'Première entreprise d\'hydrogène vert du Canada cotée à la Bourse de Toronto.',b:['Suivi de l\'ingénierie et des programmes de recherche et développement','Suivi du processus de qualification pour la Bourse TSX','Planification de la construction de la première usine d\'hydrogène vert, à Sorel-Tracy']},
+{s:2020,e:null,d:'2020',c:'dist',t:'Top 100 Professionnels Canada',o:'Canada',x:'Reconnu parmi les cent professionnels canadiens de l\'année.'},
+{s:2018,e:2022,d:'janv. 2018 – juil. 2022',c:'ing',t:'Ingénierie et transition énergétique',o:'Royal System · mandat avec Charbone Hydrogène',x:'Mandat de longue durée pour la création d\'une jeune pousse en hydrogène vert.',b:['Analyse de projets d\'acquisition de mini-centrales hydroélectriques','Projets d\'usines d\'hydrogène au Québec et prospection ailleurs au Canada']},
+{s:2017,e:2018,d:'2017 – 2018',c:'ing',t:'Ingénieur-conseil',o:'Ville de Saint-Jérôme · Bureau de l\'intégrité administrative et professionnelle',x:'Soutien à l\'inspecteur général pour la lutte contre la corruption.',b:['Architecture informatique de compilation et d\'analyse des données de projets','Réseau informatique indépendant et sécurisé, surveillance des lieux','Analyse historique des projets pour repérer des indices de malversation']},
+{s:2011,e:2017,d:'janv. 2011 – mars 2017',c:'roy',t:'Président et directeur général',o:'Royal System',x:'Développement des affaires en commerce de détail.',b:['Modules d\'enregistrement des ventes (MEV), avec Revenu Québec et IBM','Conseil sur le choix des points de vente et supervision de la programmation et de la mise en service','Clients : Six Flags / La Ronde et commerces de détail de Montréal']},
+{s:2014,e:2015,d:'2014 – 2015',c:'dir',t:'Vice-président de l\'Ordre des ingénieurs du Québec',o:'Ordre des ingénieurs du Québec (OIQ)',x:'Président du comité de la gouvernance.'},
+{s:2009,e:2011,d:'2009 – 2011',c:'ing',t:'Directeur national des ventes, Canada',o:'American Superconductor Canada',x:'Représentation de toutes les divisions et direction des soumissions et projets au Canada.',b:['Ouverture du bureau officiel du Canada à Place Ville Marie','Séminaires à Calgary, Toronto et Montréal','Comptes majeurs : Hydro One, SaskPower, Scotia Power, BC Hydro','Qualification auprès d\'Hydro-Québec; soumissions complètes d\'intégration de parcs éoliens','Responsable de l\'énergie éolienne et des services publics au Canada']},
+{s:2000,e:2009,d:'2000 – 2009',c:'ing',t:'Directeur de soumissions et directeur senior de projets',o:'ABB Inc., Saint-Laurent',x:'Leader mondial des technologies de l\'électricité et de l\'automatisme.',b:['Soumissions de 1 M$ à plus de 500 M$ en électricité et automatisation','Chargé du développement de l\'énergie éolienne au Canada','Division Mines et Métaux : projets clés en main','Projet Muskeg River Oil Sands pour Shell Canada, avec Krupp : électrification et automatisation de 2 concasseurs à Fort McMurray']},
+{s:1998,e:2008,d:'1998 – 2008',c:'dir',t:'Président du conseil d\'administration',o:'Régionale de Montréal de l\'OIQ',x:'Chronique mensuelle « Mot du président » dans la revue Plan.'},
+{s:1997,e:2000,d:'juin 1997 – mai 2000',c:'roy',t:'Président-directeur général et chef de la R&D',o:'Royal',x:'Développement de produits informatiques.',b:['Lancement du point de vente Microcash','Assemblage des ordinateurs Royal']},
+{s:1989,e:1997,d:'1989 – 1997',c:'ing',t:'Ingénieur d\'application, ingénieur de projet puis directeur de projet',o:'Hydro-Mécanique Construction, Boucherville',x:'Cycle complet des projets : ingénierie, approvisionnement, construction et mise en service.',b:['5 mini-centrales hydroélectriques au Québec, jusqu\'à la synchronisation au réseau d\'Hydro-Québec','Centrale Rio Lajas, Costa Rica : ingénierie, documentation et procédures de mise en service','Télémétrie de 6 stations de pompage et de l\'usine de filtration de Longueuil (PLC Siemens)','Automatisation de l\'usine d\'épuration de la Rive-Sud, 7 municipalités','Centrale thermique des Îles-de-la-Madeleine : ingénierie de détail']},
+{s:1989,e:null,d:'1989',c:'roy',t:'Premier emploi comme ingénieur junior',o:'Caisses enregistreuses Royal',x:'Royal était alors la division Québec de Sharp Électronique du Canada. Il en deviendra propriétaire en 2000.'},
+{s:1983,e:1988,d:'1983 – 1988',c:'form',t:'Baccalauréat en ingénierie, automatisme et informatique appliquée',o:'École Polytechnique de Montréal',x:'Génie électrique.'},
+{s:1982,e:1983,d:'1982 – 1983',c:'form',t:'DEC en sciences pures',o:'Séminaire de Sherbrooke',x:''}
+];
+var U=[
+{c:'roy',d:'Date à préciser',t:'Qualifications et comptes majeurs',o:'Royal System',x:'Compte majeur de près de 150 points de vente chez un même client; qualification auprès de Revenu Québec (MEV), d\'IBM comme distributeur spécialisé et de Global Payments comme revendeur agréé.'},
+{c:'afr',d:'Date à préciser',t:'Électrification de 21 villages au Burkina Faso',o:'Société nationale d\'électricité du Burkina Faso',x:'Directeur de projet : direction technique, suivi de l\'appel d\'offres, ingénierie et gestion de projet.'},
+{c:'ing',d:'Date à préciser',t:'Usine d\'hydrogène de Sorel-Tracy',o:'Charbone Hydrogène, Québec',x:'Projet d\'innovation : première usine d\'hydrogène vert du Canada.'},
+{c:'eng',d:'Date à préciser',t:'Professeur',o:'Collège Édouard-Montpetit et Institut Technique Aviron',x:'Cours complets d\'électrotechnique, de machines électriques, de programmation (C, C++) et d\'instrumentation au collégial; programme complet de DEP en électricité de la construction.'},
+{c:'eng',d:'1995 – 2024',t:'Conseiller puis président du conseil',o:'Festival international Nuits d\'Afrique',x:'Engagement culturel et communautaire de longue durée.'},
+{c:'dir',d:'En cours',t:'Directeur national exécutif, partenariats et financement',o:'Black Engineers of Canada',x:'Partenariats nationaux et financement de l\'organisation.'},
+{c:'dist',d:'Distinctions',t:'Fellow d\'Ingénieurs Canada, Chevalier du Mérite du Burkina Faso',o:'',x:'Prix au bénévolat du président de l\'OIQ. Membre de l\'Ordre des ingénieurs du Québec.'}
+];
+var active='all',recent=true;
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function card(e,detail){
+ var col='var('+CATS[e.c][1]+')';
+ var has=e.b&&e.b.length;
+ var more='<div class="more">'+(has?'<ul>'+e.b.map(function(i){return '<li>'+esc(i)+'</li>'}).join('')+'</ul>':'')+'<div class="photo">Photos et documents à ajouter ici</div></div>';
+ return '<li class="item" style="--c:'+col+'"><details class="card"><summary><div class="meta"><span class="yr">'+esc(e.d)+'</span><span class="tag">'+CATS[e.c][0]+'</span></div><h3>'+esc(e.t)+'</h3>'+(e.o?'<div class="org">'+esc(e.o)+'</div>':'')+(e.x?'<p class="lead">'+esc(e.x)+'</p>':'')+'<span class="hint">Voir le détail</span></summary>'+more+'</details></li>';
+}
+function era(y){return y>=2020?'Depuis 2020':y>=2010?'Années 2010':y>=2000?'Années 2000':y>=1990?'Années 1990':'Années 1980'}
+function render(){
+ var list=E.filter(function(e){return active==='all'||e.c===active});
+ list.sort(function(a,b){return recent?(b.s-a.s||(b.e||9999)-(a.e||9999)):(a.s-b.s)});
+ var html='',last='';
+ list.forEach(function(e){var g=era(e.s);if(g!==last){if(last)html+='</ul>';html+='<h2 class="era">'+g+'</h2><ul class="tl">';last=g}html+=card(e)});
+ if(last)html+='</ul>';
+ document.getElementById('tl').innerHTML=html||'<p>Aucune réalisation dans cette rubrique pour le moment.</p>';
+ var u=U.filter(function(e){return active==='all'||e.c===active});
+ document.getElementById('undated').innerHTML=u.map(function(e){return card(e)}).join('');
+ document.getElementById('undatedTitle').hidden=document.getElementById('undated').hidden=!u.length;
+ document.getElementById('count').textContent=(list.length+u.length)+' réalisations';
+}
+function chips(){
+ var h='<button class="chip" type="button" data-k="all" aria-pressed="true">Tout</button>';
+ Object.keys(CATS).forEach(function(k){h+='<button class="chip" type="button" data-k="'+k+'" aria-pressed="false" style="--c:var('+CATS[k][1]+')"><i></i>'+CATS[k][0]+'</button>'});
+ var el=document.getElementById('chips');el.innerHTML=h;
+ el.addEventListener('click',function(ev){var b=ev.target.closest('.chip');if(!b)return;active=b.dataset.k;
+  el.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});render()});
+}
+document.getElementById('order').addEventListener('click',function(){recent=!recent;this.textContent=recent?'Ordre : récent d\'abord':'Ordre : chronologique';render()});
+chips();render();
+</script>
+
+</body>
+</html>
