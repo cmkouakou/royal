@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<!-- saved from url=(0245)file:///C:/Users/clodi/AppData/Local/Packages/Claude_pzs8sxrjxfjjc/LocalCache/Roaming/Claude/scratch-workspaces/a42f890e-7c02-4962-95fd-f839e84e3c00/346506f5-64c9-4977-9e5d-a795ea5fbb1c/scratch-2026-10-27-868d60/presentation-relance-royal.html#1 -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Présentation de la relance de Royal System — réunion avec Sid Zerbo, 30 octobre 2026">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Relance Royal System — Présentation du 30 octobre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="stylesheet" href="./Relance Royal System — Présentation du 30 octobre_files/css2">
+  <style>
+    /* ==================== VARIABLES GLOBALES ==================== */
+    :root {
+      --couleur-fond: #0B1426;
+      --couleur-texte: #F7F5F0;
+      --couleur-accent: #D9822B;
+      --largeur-diapo: 1920px;
+      --hauteur-diapo: 1080px;
+    }
+
+    /* ==================== RESET & BASE ==================== */
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: var(--couleur-fond);
+      color: var(--couleur-texte);
+      font-family: 'Public Sans', Arial, sans-serif;
+    }
+
+    /* ==================== SCÈNE & DIAPOSITIVES ==================== */
+    .scene {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: var(--largeur-diapo);
+      height: var(--hauteur-diapo);
+      transform-origin: center center;
+    }
+
+    .scene > section {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease;
+    }
+
+    .scene > section.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scene section * {
+      margin: 0;
+    }
+
+    .scene section ul,
+    .scene section ol {
+      padding-left: 1.2em;
+    }
+
+    .scene section table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .scene section th,
+    .scene section td {
+      padding: 0.35em 0.6em;
+      text-align: left;
+      border-bottom: 1px solid #CFC8B8;
+    }
+
+    .scene section aside {
+      display: none;
+    }
+
+    .pastille-icone {
+      display: block;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--couleur-accent);
+    }
+
+    /* ==================== BARRE DE CONTRÔLE ==================== */
+    .controles {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 14px;
+      opacity: 0.35;
+      transition: opacity 0.2s ease;
+    }
+
+    .controles:hover,
+    .controles:focus-within {
+      opacity: 1;
+    }
+
+    .controles button {
+      min-width: 44px;
+      min-height: 44px;
+      border: 1px solid #3A4A6B;
+      border-radius: 8px;
+      background: #14213D;
+      color: var(--couleur-texte);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .compteur {
+      min-width: 64px;
+      text-align: center;
+    }
+
+    /* ==================== NOTES DU PRÉSENTATEUR ==================== */
+    .notes {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 76px;
+      max-height: 30vh;
+      overflow: auto;
+      padding: 16px 20px;
+      border-radius: 12px;
+      background: rgba(20, 33, 61, 0.95);
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .notes[hidden] {
+      display: none;
+    }
+
+    /* ==================== RESPONSIVE — TABLETTE ==================== */
+    @media (max-width: 768px) {
+      .notes {
+        font-size: 16px;
+      }
+    }
+
+    /* ==================== RESPONSIVE — MOBILE ==================== */
+    @media (max-width: 480px) {
+      .controles {
+        right: 8px;
+        bottom: 8px;
+      }
+    }
+
+    /* ==================== IMPRESSION ==================== */
+    @media print {
+      @page {
+        size: 1920px 1080px;
+        margin: 0;
+      }
+
+      html,
+      body {
+        overflow: visible;
+        height: auto;
+      }
+
+      .scene {
+        position: static;
+        transform: none !important;
+      }
+
+      .scene > section {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        width: 1920px;
+        height: 1080px;
+        page-break-after: always;
+      }
+
+      .controles,
+      .notes {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ==================== DIAPOSITIVES ==================== -->
+  <main class="scene" id="scene" aria-live="polite" style="transform: translate(-50%, -50%) scale(0.677778);">
+    <section id="cover" data-transition="fade" style="background:#14213D;color:#F7F5F0;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:40px" class="active">
+    <div style="position:absolute;left:0;top:0;width:24px;height:1080px;background:#D9822B"></div>
+    <p style="font-size:32px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#E9A35A">Royal System · Montréal</p>
+    <h1 style="font-family:'Domine', Georgia, serif;font-size:120px;font-weight:700;line-height:1.05">Relance<br>Royal System</h1>
+    <p style="font-size:44px;color:#C9D1E0;line-height:1.3">Redevenir le partenaire technologique de confiance des commerces de quartier</p>
+    <p style="position:absolute;left:128px;bottom:96px;width:1400px;font-size:28px;color:#C9D1E0">Réunion avec Sid Zerbo · vendredi 30 octobre 2026, 18 h 30 · Présenté par Claude Marcel Kouakou</p>
+    <aside>Ouvrir sur l’objectif de la soirée : s’entendre sur une stratégie courte, réaliste et mesurable, puis repartir chacun avec ses tâches. Durée visée : 30 minutes de présentation, le reste en discussion.</aside>
+    </section>
+    <section id="heritage" data-transition="fade" style="background:#F7F5F0;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">D’où nous partons</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#14213D">Plus de 60 ans au service du commerce montréalais</h2>
+    <div style="display:grid;grid-template-columns:repeat(5, 1fr);gap:24px">
+    <div style="display:flex;flex-direction:column;gap:12px;border-top:6px solid #D9822B;padding:24px 0 0 0">
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:44px;color:#14213D">1989</h3>
+    <p style="font-size:26px;line-height:1.35;color:#4A5568">Sid entre comme ingénieur junior chez Caisses enregistreuses Royal, division québécoise de Sharp Électronique</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;border-top:6px solid #D9822B;padding:24px 0 0 0">
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:44px;color:#14213D">1997–2000</h3>
+    <p style="font-size:26px;line-height:1.35;color:#4A5568">PDG et R&amp;D : lancement du point de vente Microcash, ordinateurs Royal assemblés</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;border-top:6px solid #D9822B;padding:24px 0 0 0">
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:44px;color:#14213D">2000</h3>
+    <p style="font-size:26px;line-height:1.35;color:#4A5568">Sid devient propriétaire de l’entreprise</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;border-top:6px solid #D9822B;padding:24px 0 0 0">
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:44px;color:#14213D">2011–2017</h3>
+    <p style="font-size:26px;line-height:1.35;color:#4A5568">Modules MEV avec Revenu Québec et IBM ; clients Six Flags / La Ronde et détaillants de Montréal</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;border-top:6px solid #D9822B;padding:24px 0 0 0">
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:44px;color:#14213D">2020–2026</h3>
+    <p style="font-size:26px;line-height:1.35;color:#4A5568">Redressement : points de vente, énergie (génératrices, solaire, UPS), export vers l’Afrique francophone</p>
+    </div>
+    </div>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Source : portfolio de Sid Zerbo (dépôt cmkouakou/royal) · 2</p>
+    <aside>Rappeler que Royal n’est pas une jeune pousse : c’est une PME de plus de 60 ans, avec une marque connue et une expertise MEV acquise avec Revenu Québec. La relance s’appuie sur cet héritage.</aside>
+    </section>
+    <section id="sid" data-transition="fade" style="background:#EAE6DD;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">Le dirigeant</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#14213D">Sid Zerbo, ingénieur et bâtisseur</h2>
+    <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:32px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+    <p style="font-family:'Domine', Georgia, serif;font-size:96px;font-weight:700;color:#14213D;line-height:1.1">1989</p>
+    <p style="font-size:28px;color:#4A5568">début chez Royal</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+    <p style="font-family:'Domine', Georgia, serif;font-size:96px;font-weight:700;color:#14213D;line-height:1.1">200</p>
+    <p style="font-size:28px;color:#4A5568">employés dirigés à la CSEM</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+    <p style="font-family:'Domine', Georgia, serif;font-size:96px;font-weight:700;color:#14213D;line-height:1.1">27 000</p>
+    <p style="font-size:28px;color:#4A5568">km de conduits (CSEM)</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+    <p style="font-family:'Domine', Georgia, serif;font-size:96px;font-weight:700;color:#14213D;line-height:1.1">21</p>
+    <p style="font-size:28px;color:#4A5568">villages électrifiés au Burkina Faso</p>
+    </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px">
+    <p style="font-size:26px;font-weight:600;background:#14213D;color:#F7F5F0;padding:12px 24px;border-radius:40px">Ing., FIC / P.Eng, FEC</p>
+    <p style="font-size:26px;font-weight:600;background:#14213D;color:#F7F5F0;padding:12px 24px;border-radius:40px">Top 100 Professionnels Canada 2020</p>
+    <p style="font-size:26px;font-weight:600;background:#14213D;color:#F7F5F0;padding:12px 24px;border-radius:40px">Top 100 Innovation et entrepreneuriat 2025</p>
+    <p style="font-size:26px;font-weight:600;background:#14213D;color:#F7F5F0;padding:12px 24px;border-radius:40px">Chevalier du Mérite, Burkina Faso</p>
+    <p style="font-size:26px;font-weight:600;background:#14213D;color:#F7F5F0;padding:12px 24px;border-radius:40px">Ex-VP de l’OIQ</p>
+    </div>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Parcours : Hydro-Mécanique, ABB, AMSC Canada, Charbone Hydrogène, PDG de la CSEM (2022–2024) · 3</p>
+    <aside>La crédibilité de Sid est un actif commercial : on l’utilisera dans le site, la fiche Google et les présentations aux clients. Lui demander quelles distinctions il veut mettre en avant publiquement.</aside>
+    </section>
+    <section id="acquis" data-transition="fade" style="background:#F7F5F0;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">Nos acquis</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#14213D">Des qualifications que les nouveaux venus n’ont pas</h2>
+    <div style="display:flex;gap:32px">
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:40px;border:1px solid #DDD6C8;border-radius:16px">
+    <span class="pastille-icone" aria-hidden="true"></span>
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:40px;color:#14213D">Accréditations</h3>
+    <p style="font-size:28px;line-height:1.4;color:#4A5568">Revenu Québec (MEV), IBM distributeur spécialisé, Global Payments revendeur autorisé</p>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:40px;border:1px solid #DDD6C8;border-radius:16px">
+    <span class="pastille-icone" aria-hidden="true"></span>
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:40px;color:#14213D">Références</h3>
+    <p style="font-size:28px;line-height:1.4;color:#4A5568">Un grand compte d’environ 150 terminaux ; Six Flags / La Ronde ; détaillants montréalais</p>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:40px;border:1px solid #DDD6C8;border-radius:16px">
+    <span class="pastille-icone" aria-hidden="true"></span>
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:40px;color:#14213D">Présence 2024</h3>
+    <p style="font-size:28px;line-height:1.4;color:#4A5568">Salons SIAL Canada, Sécurité Canada (Laval), Bluestar (Dorval)</p>
+    </div>
+    </div>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Source : portfolio de Sid Zerbo · 4</p>
+    <aside>Vérifier avec Sid que chaque accréditation est toujours active avant de l’afficher sur le site : c’est un point à confirmer ce soir.</aside>
+    </section>
+    <section id="swot" data-transition="fade" style="background:#F7F5F0;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">Où nous en sommes</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:64px;font-weight:700;line-height:1.1;color:#14213D">Diagnostic : forces réelles, visibilité nulle</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:32px;border:1px solid #DDD6C8;border-left:8px solid #14213D;border-radius:12px">
+    <h3 style="font-size:32px;font-weight:700;color:#14213D">Forces</h3>
+    <p style="font-size:26px;line-height:1.35;color:#4A5568">Marque historique, expertise MEV, accréditations, crédibilité du dirigeant, service multilingue</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:32px;border:1px solid #DDD6C8;border-left:8px solid #D9822B;border-radius:12px">
+    <h3 style="font-size:32px;font-weight:700;color:#A65A14">Faiblesses</h3>
+    <p style="font-size:26px;line-height:1.35;color:#4A5568">Site historique hors ligne, aucune fiche Google, dépendance à une seule personne, trésorerie limitée</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:32px;border:1px solid #DDD6C8;border-left:8px solid #14213D;border-radius:12px">
+    <h3 style="font-size:32px;font-weight:700;color:#14213D">Opportunités</h3>
+    <p style="font-size:26px;line-height:1.35;color:#4A5568">Clients en attente, conformité MEV-WEB des restaurants en 2027, commerces de quartier mal accompagnés par les plateformes</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:32px;border:1px solid #DDD6C8;border-left:8px solid #D9822B;border-radius:12px">
+    <h3 style="font-size:32px;font-weight:700;color:#A65A14">Menaces</h3>
+    <p style="font-size:26px;line-height:1.35;color:#4A5568">Plateformes qui vendent sans accompagner, délais du fournisseur Optima, certification MEV-WEB de GoPOS à confirmer</p>
+    </div>
+    </div>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Source : étude stratégique kalami · 5</p>
+    <aside>Être franc : le savoir-faire est là, mais un client qui cherche Royal en ligne aujourd’hui ne trouve rien. La première bataille est la visibilité.</aside>
+    </section>
+    <section id="vision" data-transition="fade" style="background:#D9822B;color:#14213D;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:48px" class="">
+    <p style="font-size:32px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#14213D">Notre vision</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:80px;font-weight:700;line-height:1.2;color:#14213D">« Là où les plateformes vendent, Royal installe, forme et dépanne — dans la langue du commerçant. »</h2>
+    <p style="font-size:36px;line-height:1.4;color:#14213D">Redevenir, dans la région de Montréal, le partenaire technologique de confiance des commerces de quartier.</p>
+    <aside>Mission : solutions de point de vente, de sécurité et d’énergie installées et soutenues sur place. Valeurs : proximité (installation en une journée, soumission en 24 h), fiabilité du service, service multilingue, prix honnêtes.</aside>
+    </section>
+    <section id="strategie" data-transition="fade" style="background:#F7F5F0;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">Où nous allons</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#14213D">Une stratégie de différenciation ciblée, en trois temps</h2>
+    <div style="display:flex;gap:32px">
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#14213D;color:#F7F5F0;padding:40px;border-radius:16px">
+    <p style="font-size:26px;font-weight:700;color:#E9A35A">Maintenant · 6 semaines</p>
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:40px;color:#F7F5F0">Pénétration</h3>
+    <p style="font-size:28px;line-height:1.4;color:#C9D1E0">Optima APOS pour les clients en attente et anciens clients, commerces de détail et de services non soumis au MEV-WEB</p>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:40px;border:1px solid #DDD6C8;border-radius:16px">
+    <p style="font-size:26px;font-weight:700;color:#A65A14">Janvier 2027</p>
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:40px;color:#14213D">MEV-WEB clé en main</h3>
+    <p style="font-size:28px;line-height:1.4;color:#4A5568">Offre de conformité pour les restaurants, une fois la certification confirmée</p>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:40px;border:1px solid #DDD6C8;border-radius:16px">
+    <p style="font-size:26px;font-weight:700;color:#A65A14">Ensuite</p>
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:40px;color:#14213D">Revenus récurrents</h3>
+    <p style="font-size:28px;line-height:1.4;color:#4A5568">Contrats de service, abonnements et tableaux de bord pour les commerçants</p>
+    </div>
+    </div>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Source : plan stratégique kalami · 7</p>
+    <aside>Insister : pas de restaurants pendant l’essai. On les aborde en janvier avec une offre MEV-WEB solide, pas avant.</aside>
+    </section>
+    <section id="renoncements" data-transition="fade" style="background:#14213D;color:#F7F5F0;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E9A35A">Choisir, c’est renoncer</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#F7F5F0">Ce que nous ne ferons pas</h2>
+    <div style="display:flex;flex-direction:column;gap:0">
+    <p style="font-size:34px;line-height:1.4;padding:20px 0;border-top:1px solid #3A4A6B">Pas de promesse « meilleur prix garanti »</p>
+    <p style="font-size:34px;line-height:1.4;padding:20px 0;border-top:1px solid #3A4A6B">Pas de réouverture des bureaux de Québec, Ottawa-Gatineau et Brossard avant le huitième mois</p>
+    <p style="font-size:34px;line-height:1.4;padding:20px 0;border-top:1px solid #3A4A6B">Pas d’investissement en Afrique ni en Haïti pour l’instant</p>
+    <p style="font-size:34px;line-height:1.4;padding:20px 0;border-top:1px solid #3A4A6B">Pas de stock : commande à la vente</p>
+    <p style="font-size:34px;line-height:1.4;padding:20px 0;border-top:1px solid #3A4A6B;border-bottom:1px solid #3A4A6B">Pas de prospection des restaurants et bars du 2 novembre au 13 décembre 2026</p>
+    </div>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#9AA6BD">8</p>
+    <aside>Ces renoncements protègent la trésorerie et le temps de Sid. Demander son accord explicite sur chacun.</aside>
+    </section>
+    <section id="vagues" data-transition="fade" style="background:#F7F5F0;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">La feuille de route</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#14213D">Quatre vagues d’ici mars 2027</h2>
+    <table style="font-size:30px;color:#1F2A44">
+    <tbody><tr style="background:#14213D"><th style="width:10%;color:#F7F5F0">Vague</th><th style="width:40%;color:#F7F5F0">Objet</th><th style="width:28%;color:#F7F5F0">Porteur</th><th style="width:22%;color:#F7F5F0">Période</th></tr>
+    <tr><td>1</td><td>Lancement Optima</td><td>Sid, avec Claude Marcel</td><td>nov.–déc. 2026</td></tr>
+    <tr style="background:#EAE6DD"><td>2</td><td>Fondations marketing gratuites</td><td>Claude Marcel</td><td>nov. 2026–janv. 2027</td></tr>
+    <tr><td>3</td><td>Revenus récurrents</td><td>Sid et Claude Marcel</td><td>déc.–févr.</td></tr>
+    <tr style="background:#EAE6DD"><td>4</td><td>MEV-WEB pour les restaurants</td><td>Sid et Claude Marcel</td><td>janv.–mars 2027</td></tr>
+    </tbody></table>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Source : plan stratégique kalami · 9</p>
+    <aside>Les vagues se chevauchent volontairement : la vague 2 (site, fiche Google, page Facebook) soutient la vague 1 dès novembre.</aside>
+    </section>
+    <section id="essai" data-transition="fade" style="background:#EAE6DD;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">Comment</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#14213D">L’essai de 6 semaines : 2 novembre → 13 décembre</h2>
+    <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:32px">
+    <div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:36px;border-radius:16px">
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:36px;color:#14213D">Semaines 1–2</h3>
+    <p style="font-size:28px;line-height:1.4;color:#4A5568">Contacter 100 % des clients en attente ; valider GoPOS (langue, paiement) ; comparer les fournisseurs Optima</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:36px;border-radius:16px">
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:36px;color:#14213D">Semaines 3–4</h3>
+    <p style="font-size:28px;line-height:1.4;color:#4A5568">Au moins 1 vente par semaine ; site WordPress en ligne ; fiche Google active</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:36px;border-radius:16px">
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:36px;color:#14213D">Semaines 5–6</h3>
+    <p style="font-size:28px;line-height:1.4;color:#4A5568">Prospection de quartier, offre Black Friday, bilan et décision le 14 décembre</p>
+    </div>
+    </div>
+    <p style="font-size:30px;line-height:1.4;color:#1F2A44"><b>Outils de soutien :</b> suivi des contacts et soumissions, grille de prix écrite, modèles de messages, tableau de bord hebdomadaire, site vitrine.</p>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Détail : guide « Outils de soutien opérationnel » · 10</p>
+    <aside>Rythme proposé : un point de 30 minutes chaque lundi pour lire le tableau de bord ensemble.</aside>
+    </section>
+    <section id="site" data-transition="fade" style="background:#F7F5F0;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">Visibilité</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#14213D">Un nouveau site WordPress sur le domaine historique</h2>
+    <div style="display:flex;gap:48px">
+    <div style="flex:1;display:flex;flex-direction:column;gap:20px">
+    <h3 style="font-size:34px;font-weight:700;color:#14213D">Pourquoi changer</h3>
+    <p style="font-size:30px;line-height:1.45;color:#4A5568">L’ancien site, conçu avec Adobe Muse, est hors ligne et ne peut plus être mis à jour : l’outil n’est plus maintenu. On garde le domaine, et donc la notoriété acquise.</p>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:20px">
+    <h3 style="font-size:34px;font-weight:700;color:#14213D">Ce que nous livrons</h3>
+    <ul style="font-size:30px;line-height:1.45;color:#4A5568">
+    <li>Site d’une page, d’après la maquette existante</li>
+    <li>Contenu repris de l’ancien site</li>
+    <li>Formulaire de demande de soumission</li>
+    <li>Avis Loi 25, SSL, redirections des anciennes adresses</li>
+    <li>Une fiche Google couvrant Montréal, Laval et Brossard</li>
+    </ul>
+    </div>
+    </div>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Mise en ligne visée : semaine 3 de l’essai · 11</p>
+    <aside>Accès au domaine et à l’hébergement : par invitation seulement, jamais de mot de passe partagé. Demander à Sid qui détient le compte du registraire.</aside>
+    </section>
+    <section id="besoins" data-transition="fade" style="background:#EAE6DD;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">Ce dont nous avons besoin</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#14213D">Ce que Sid fournit, du 4 au 13 novembre</h2>
+    <table style="font-size:28px;color:#1F2A44">
+    <tbody><tr style="background:#14213D"><th style="width:42%;color:#F7F5F0">Besoin</th><th style="width:58%;color:#F7F5F0">Pour quoi faire</th></tr>
+    <tr><td>Liste des clients en attente et anciens clients</td><td>Les contacter tous dès la semaine 2</td></tr>
+    <tr style="background:#F7F5F0"><td>Grille de prix écrite</td><td>Soumissions en 24 h, même en son absence</td></tr>
+    <tr><td>Contenu de l’ancien site Muse</td><td>Alimenter le nouveau site WordPress</td></tr>
+    <tr style="background:#F7F5F0"><td>Accès au domaine et à l’hébergement</td><td>Mise en ligne, par invitation seulement</td></tr>
+    <tr><td>Budget domaine et hébergement</td><td>Engager les frais de base du site</td></tr>
+    <tr style="background:#F7F5F0"><td>Conditions du fournisseur Optima</td><td>Délais, prix, démonstrations</td></tr>
+    </tbody></table>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Détail et échéances : fiche récapitulative · 12</p>
+    <aside>Fixer ce soir une date précise pour chaque élément. Sans la liste des clients en attente, l’essai ne peut pas démarrer.</aside>
+    </section>
+    <section id="roles" data-transition="fade" style="background:#F7F5F0;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">Qui fait quoi</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#14213D">Deux rôles clairs</h2>
+    <div style="display:flex;gap:32px">
+    <div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#14213D;color:#F7F5F0;padding:48px;border-radius:16px">
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:44px;color:#F7F5F0">Sid</h3>
+    <ul style="font-size:30px;line-height:1.5;color:#C9D1E0">
+    <li>Appeler les clients en attente</li>
+    <li>Faire les démonstrations et conclure les ventes</li>
+    <li>Installer et former sur place</li>
+    <li>Valider la grille de prix et déléguer les soumissions</li>
+    <li>Fournir les éléments de la diapositive 12</li>
+    </ul>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF8;padding:48px;border:1px solid #DDD6C8;border-radius:16px">
+    <h3 style="font-family:'Domine', Georgia, serif;font-size:44px;color:#14213D">Claude Marcel</h3>
+    <ul style="font-size:30px;line-height:1.5;color:#4A5568">
+    <li>Monter les outils de suivi et le tableau de bord</li>
+    <li>Bâtir le site WordPress (semaine 3)</li>
+    <li>Créer la fiche Google et la page Facebook</li>
+    <li>Publier 5 messages par semaine</li>
+    <li>Documenter le processus de commande</li>
+    </ul>
+    </div>
+    </div>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Liste complète par semaine : fiche récapitulative · 13</p>
+    <aside>Sid vend, installe et décide ; Claude Marcel outille, rend visible et mesure.</aside>
+    </section>
+    <section id="cibles" data-transition="fade" style="background:#F7F5F0;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">Comment nous mesurerons</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#14213D">Des cibles chiffrées, suivies chaque semaine</h2>
+    <table style="font-size:28px;color:#1F2A44">
+    <tbody><tr style="background:#14213D"><th style="width:58%;color:#F7F5F0">Indicateur</th><th style="width:22%;color:#F7F5F0">Cible</th><th style="width:20%;color:#F7F5F0">Échéance</th></tr>
+    <tr><td>Clients en attente contactés</td><td>100 %</td><td>semaine 2</td></tr>
+    <tr style="background:#EAE6DD"><td>Ventes</td><td>≥ 1 par semaine</td><td>dès semaine 3</td></tr>
+    <tr><td>Délai de soumission</td><td>24 h</td><td>en continu</td></tr>
+    <tr style="background:#EAE6DD"><td>Commerces contactés / messages publiés</td><td>20 / 5 par semaine</td><td>en continu</td></tr>
+    <tr><td>Commerces équipés</td><td>15</td><td>juillet 2027</td></tr>
+    <tr style="background:#EAE6DD"><td>Contrats récurrents</td><td>5</td><td>juillet 2027</td></tr>
+    <tr><td>Part récurrente du chiffre d’affaires</td><td>un tiers</td><td>nov. 2027</td></tr>
+    </tbody></table>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Source : plan stratégique kalami · 14</p>
+    <aside>Nous nous engageons sur les moyens (contacts, délais, publications) ; les résultats de vente dépendent aussi du marché.</aside>
+    </section>
+    <section id="risques" data-transition="fade" style="background:#EAE6DD;color:#1F2A44;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#A65A14">Signaux d’alerte</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#14213D">Les risques et notre réponse prévue</h2>
+    <table style="font-size:28px;color:#1F2A44">
+    <tbody><tr style="background:#14213D"><th style="width:30%;color:#F7F5F0">Risque</th><th style="width:34%;color:#F7F5F0">Signal</th><th style="width:36%;color:#F7F5F0">Réponse</th></tr>
+    <tr><td>Clients en attente déjà partis</td><td>Moins de la moitié joignables</td><td>Bascule vers la prospection de quartier</td></tr>
+    <tr style="background:#F7F5F0"><td>Retards Optima</td><td>Livraison incertaine</td><td>Comparer les fournisseurs dès la semaine 2</td></tr>
+    <tr><td>Dépendance au président</td><td>Soumission en attente plus de 48 h</td><td>Grille de prix écrite et délégation</td></tr>
+    <tr style="background:#F7F5F0"><td>GoPOS non certifié MEV-WEB</td><td>Pas de confirmation</td><td>Vérifier avant janvier</td></tr>
+    <tr><td>GoPOS : langue ou paiement</td><td>Objections aux 3 premières démos</td><td>Valider en semaine 1</td></tr>
+    </tbody></table>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6A7179">Source : plan stratégique kalami · 15</p>
+    <aside>Chaque signal est vérifié lors du point du lundi. Un signal rouge déclenche la réponse prévue, sans attendre le bilan.</aside>
+    </section>
+    <section id="decisions" data-transition="fade" style="background:#14213D;color:#F7F5F0;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px" class="">
+    <p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E9A35A">Ce soir</p>
+    <h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#F7F5F0">Cinq décisions pour démarrer le 2 novembre</h2>
+    <ol style="font-size:34px;line-height:1.6;color:#C9D1E0">
+    <li>Valider la stratégie et les renoncements</li>
+    <li>Fixer la date de remise de la liste des clients en attente</li>
+    <li>Approuver le budget domaine et hébergement</li>
+    <li>Désigner le détenteur des accès au domaine (par invitation)</li>
+    <li>Planifier les premières démonstrations Optima</li>
+    </ol>
+    <p style="font-size:32px;line-height:1.4;color:#F7F5F0;border-left:6px solid #D9822B;padding:8px 0 8px 32px">Bilan le 14 décembre : poursuivre, ajuster ou arrêter selon les indicateurs.</p>
+    <p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#9AA6BD">16</p>
+    <aside>Terminer en remettant la fiche récapitulative à Sid et en confirmant le point du lundi 2 novembre.</aside>
+    </section>
+  </main>
+
+  <!-- ==================== NOTES & CONTRÔLES ==================== -->
+  <div class="notes" id="notes" hidden="">Ouvrir sur l’objectif de la soirée : s’entendre sur une stratégie courte, réaliste et mesurable, puis repartir chacun avec ses tâches. Durée visée : 30 minutes de présentation, le reste en discussion.</div>
+  <nav class="controles" aria-label="Navigation du diaporama">
+    <button type="button" id="btnPrecedent" aria-label="Diapositive précédente">←</button>
+    <span class="compteur" id="compteur">1 / 16</span>
+    <button type="button" id="btnSuivant" aria-label="Diapositive suivante">→</button>
+    <button type="button" id="btnNotes" aria-label="Afficher ou masquer les notes">Notes</button>
+    <button type="button" id="btnPleinEcran" aria-label="Plein écran">⛶</button>
+  </nav>
+
+  <script>
+    // ==================== VARIABLES GLOBALES ====================
+    const LARGEUR_DIAPO = 1920;
+    const HAUTEUR_DIAPO = 1080;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const scene = document.getElementById('scene');
+      const zoneNotes = document.getElementById('notes');
+      const compteur = document.getElementById('compteur');
+      if (!scene || !zoneNotes || !compteur) {
+        return;
+      }
+      const diapos = Array.from(scene.querySelectorAll(':scope > section'));
+      let indexCourant = 0;
+
+      // ==================== FONCTIONS UTILITAIRES ====================
+
+      /**
+       * Ajuste l'échelle de la scène pour remplir la fenêtre sans déformation
+       */
+      function ajusterEchelle() {
+        const echelle = Math.min(
+          window.innerWidth / LARGEUR_DIAPO,
+          window.innerHeight / HAUTEUR_DIAPO
+        );
+        scene.style.transform = `translate(-50%, -50%) scale(${echelle})`;
+      }
+
+      /**
+       * Affiche la diapositive demandée, ses notes et met à jour l'adresse
+       * @param {number} index - Position de la diapositive (0 = couverture)
+       */
+      function afficherDiapo(index) {
+        indexCourant = Math.max(0, Math.min(index, diapos.length - 1));
+        diapos.forEach((diapo, i) => {
+          diapo.classList.toggle('active', i === indexCourant);
+        });
+        const note = diapos[indexCourant].querySelector('aside');
+        zoneNotes.textContent = note ? note.textContent : 'Aucune note.';
+        compteur.textContent = `${indexCourant + 1} / ${diapos.length}`;
+        history.replaceState(null, '', `#${indexCourant + 1}`);
+      }
+
+      /**
+       * Bascule le mode plein écran du navigateur
+       */
+      function basculerPleinEcran() {
+        try {
+          if (document.fullscreenElement) {
+            document.exitFullscreen();
+          } else {
+            document.documentElement.requestFullscreen();
+          }
+        } catch (erreur) {
+          compteur.title = 'Plein écran non disponible dans ce navigateur';
+        }
+      }
+
+      // ==================== GESTION DES ÉVÉNEMENTS ====================
+      document.addEventListener('keydown', (evenement) => {
+        const touchesSuivant = ['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'];
+        const touchesPrecedent = ['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'];
+        if (touchesSuivant.includes(evenement.key)) {
+          evenement.preventDefault();
+          afficherDiapo(indexCourant + 1);
+        } else if (touchesPrecedent.includes(evenement.key)) {
+          evenement.preventDefault();
+          afficherDiapo(indexCourant - 1);
+        } else if (evenement.key === 'Home') {
+          afficherDiapo(0);
+        } else if (evenement.key === 'End') {
+          afficherDiapo(diapos.length - 1);
+        } else if (evenement.key.toLowerCase() === 'n') {
+          zoneNotes.hidden = !zoneNotes.hidden;
+        } else if (evenement.key.toLowerCase() === 'f') {
+          basculerPleinEcran();
+        }
+      });
+
+      const boutons = {
+        btnPrecedent: () => afficherDiapo(indexCourant - 1),
+        btnSuivant: () => afficherDiapo(indexCourant + 1),
+        btnNotes: () => { zoneNotes.hidden = !zoneNotes.hidden; },
+        btnPleinEcran: basculerPleinEcran
+      };
+      Object.entries(boutons).forEach(([id, action]) => {
+        const bouton = document.getElementById(id);
+        if (bouton) {
+          bouton.addEventListener('click', action);
+        }
+      });
+
+      // Balayage tactile (tablette, téléphone)
+      let departX = null;
+      document.addEventListener('touchstart', (e) => { departX = e.touches[0].clientX; });
+      document.addEventListener('touchend', (e) => {
+        if (departX === null) {
+          return;
+        }
+        const ecart = e.changedTouches[0].clientX - departX;
+        if (Math.abs(ecart) > 50) {
+          afficherDiapo(indexCourant + (ecart < 0 ? 1 : -1));
+        }
+        departX = null;
+      });
+
+      window.addEventListener('resize', ajusterEchelle);
+
+      // ==================== INITIALISATION ====================
+      const depart = parseInt(window.location.hash.slice(1), 10);
+      ajusterEchelle();
+      afficherDiapo(Number.isNaN(depart) ? 0 : depart - 1);
+    });
+  </script>
+
+
+</body></html>
